@@ -27,6 +27,7 @@ class FileManager:
         return json_string
 
     def string_to_json(self,string):
+        string = self.clean_json(string)
         return json.loads(string)
 
     def update_page_content(self,content):
