@@ -26,7 +26,8 @@ def input_listener(model_type=None):
         model.generate(user_input)
 
 def generate_sections():
-    sections = ["hero", "benefits", "call-to-action", "faq", "features", "testimonials"]
+    sections = ["hero", "benefits"]
+    # , "call-to-action", "faq", "features", "testimonials"
     model = ModelManager()
     res_json = {}
 
@@ -35,15 +36,17 @@ def generate_sections():
 
     model.generate(init_prompt + user_prompt)
     file_manager = FileManager()
-    section_prompt = ""
-    section_json = ""
+
 
     for section in sections:
+        section_prompt = ""
+        section_json = ""
+        print("Section: ", section)
         if section == "hero":
-            section_prompt = "Okay new we will be creating data relevant to the hero section of the landing page. Create data for the heading, and subheading of the hero section,  and represent it in json format. You must not include any code block formating"
+            section_prompt = "Okay now we will be creating data relevant to the hero section of the landing page. Create data for the heading, and subheading of the hero section,  and represent it in json format. You must not include any code block formating"
             section_json = model.generate(section_prompt)
         elif section == "benefits":
-            section_prompt = ""
+            section_prompt = "Create data for the benefits section of the landing page with a single title for the benefits section, as well as sample benefits. Data should be in a json format"
             section_json = model.generate(section_prompt)
         elif section == "call-to-action":
             section_prompt = ""
@@ -55,7 +58,8 @@ def generate_sections():
             section_prompt = ""
             section_json = model.generate(section_prompt)
 
-        if section_json:
+        print("SECTION JSON: ", section_json, section)
+        if section_json != None:
             res_json[section] = file_manager.string_to_json(section_json)
         else:
             continue
@@ -63,7 +67,7 @@ def generate_sections():
     json_str = file_manager.dict_to_json(res_json)
     json_str = file_manager.clean_json(json_str)
     model.write_res(json_str)
-    # file_manager.update_page_content(json_str)
+    file_manager.update_page_content(json_str)
 
 
 
