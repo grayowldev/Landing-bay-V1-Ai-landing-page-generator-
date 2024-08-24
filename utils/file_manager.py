@@ -5,20 +5,21 @@ import os.path
 class FileManager:
 
     # Read a file
-    def read_file(self, file_name):
-        with open(file_name, 'r') as f:
-            return f.read()
+    def read(self, file_name):
+        with open(file_name, 'r', encoding='utf-8') as file:
+            return file.read()
 
-    #   Write to a file
+    # Write to a file
     def write_file(self, file_name):
         with open(file_name, 'w') as f:
             return f.write()
 
 
-    #   Update/ append to a file
-    def append_file(self, file_name):
-        with open(file_name, 'a') as f:
-            return f.write()
+    # Update/ append to a file
+    def append_file(self, file_name, content):
+        with open(file_name, 'a+', encoding='utf-8') as file:
+            file.seek(0)
+            return file.write(content)
 
     # Read a file then append to it
     def read_write_file(self, file_name):

@@ -14,6 +14,8 @@ class SectionManager:
         return res
 
     def benefits_section_generator(self, raw_data):
+        print("!!!!!!!!!!!!!")
+        print(raw_data)
         res = {}
         res["title"] = raw_data[0].strip()
         res["benefits"] = [item.strip() for item in raw_data[1:]]
@@ -39,10 +41,11 @@ class SectionManager:
         print("^^^^^^^^^^^^")
         print(raw_data)
         res = {}
+        print(raw_data[0])
         try:
             res["title"] = raw_data[0].split(":")[1].strip()
         except:
-            res["title"] = raw_data[0][1].strip()
+            res["title"] = raw_data[0].strip()
         r_categories = raw_data[1].split("{")
         categories = []
 
@@ -91,6 +94,9 @@ class SectionManager:
                 return None
 
             tokens = model.generate(prompt)
+            if section == "benefits":
+                print(">>>>>>>>>")
+                print(tokens)
             data = promptManager.token_to_dict(tokens, section)
             res[section] = data
 
