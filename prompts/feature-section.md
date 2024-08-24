@@ -1,0 +1,1 @@
+Create data for the features section of the landing page with a single title for the features section, as well as at least 3 sample features. The data should be in pain text, with no additional formatting. Only produce the title and features separated by a new line and --, nothing else.
