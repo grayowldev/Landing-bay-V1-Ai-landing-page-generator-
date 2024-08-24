@@ -19,13 +19,15 @@ export default function Home() {
   const filePath = path.join(process.cwd(),'src', 'app', 'pageContent.json');
   const jsonData = fs.readFileSync(filePath, 'utf8');
   const data = JSON.parse(jsonData);
+
+
   return (
       <div>
           <Hero data={data.hero} ></Hero>
           <Benefits data={data.benefits}></Benefits>
-          <Features></Features>
+          <Features data={data.features}></Features>
           <Testimonials></Testimonials>
-          <Pricing></Pricing>
+          <Pricing data={data.pricing}></Pricing>
           <CallToAction></CallToAction>
           <FAQ></FAQ>
           <Footer></Footer>
