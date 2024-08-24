@@ -1,0 +1,1 @@
+Okay now we will be creating data relevant to the hero section of the landing page. Create data for the heading, and subheading of the hero section. The data should be in pain text, with no additional formatting. Only produce the heading and subheading separated by a new line and --, nothing else.

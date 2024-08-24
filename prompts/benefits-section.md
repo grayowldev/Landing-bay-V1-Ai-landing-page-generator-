@@ -1,0 +1,1 @@
+Create data for the benefits section of the landing page with a single title for the benefits section, as well as at least 3 sample benefits. The data should be in pain text, with no additional formatting. Only produce the title and benefits separated by a new line and --, nothing else.
