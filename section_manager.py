@@ -14,8 +14,6 @@ class SectionManager:
         return res
 
     def benefits_section_generator(self, raw_data):
-        print("!!!!!!!!!!!!!")
-        print(raw_data)
         res = {}
         res["title"] = raw_data[0].strip()
         res["benefits"] = [item.strip() for item in raw_data[1:]]
@@ -26,11 +24,8 @@ class SectionManager:
 
     def faq_section_generator(self, raw_data):
         from utils.file_manager import FileManager
-        file_manager = FileManager()
 
-        print("printing faq raw data")
-        # print(type(raw_data))
-        # print(file_manager.string_to_json(raw_data))
+        file_manager = FileManager()
         return file_manager.string_to_json(raw_data)
 
     def feature_section_generator(self, raw_data):
@@ -44,10 +39,7 @@ class SectionManager:
         pass
 
     def pricing_section_generator(self, raw_data):
-        print("^^^^^^^^^^^^")
-        print(raw_data)
         res = {}
-        print(raw_data[0])
         try:
             res["title"] = raw_data[0].split(":")[1].strip()
         except:
@@ -71,10 +63,6 @@ class SectionManager:
     def testimonials_section_generator(self, raw_data):
         from utils.file_manager import FileManager
         file_manager = FileManager()
-
-        print("printing testimonial raw data")
-        # print(type(raw_data))
-        # print(file_manager.string_to_json(raw_data))
         return file_manager.string_to_json(raw_data)
 
     def get_section_data(self, sections_array):
@@ -112,12 +100,8 @@ class SectionManager:
                 return None
 
             tokens = model.generate(prompt)
-            if section == "benefits":
-                print(">>>>>>>>>")
-                print(tokens)
             print("Converting tokens to dictionary...")
             data = promptManager.token_to_dict(tokens, section)
-            print("Data: \n", data)
             res[section] = data
 
         return res

@@ -31,12 +31,10 @@ def generate_sections():
     promptManager = PromptManager()
     file_manager = FileManager()
     section_manager = SectionManager()
+    model = ModelManager()
 
     sections = ["hero", "benefits", "pricing", "features", "faq", "testimonials"]
 
-    # , "call-to-action", "features", "testimonials"
-    model = ModelManager()
-    res_json = {}
 
     init_prompt = promptManager.read('prompts/init.md')
     user_prompt = " Create a landing page for a saas application"
@@ -44,7 +42,6 @@ def generate_sections():
     model.generate(init_prompt + user_prompt)
 
     data = section_manager.get_section_data(sections)
-    # print(data)
 
 
     json_str = file_manager.dict_to_json(data)

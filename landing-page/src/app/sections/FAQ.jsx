@@ -15,19 +15,3 @@ export const FAQ = ({data}) => {
     </section>
   );
 };
-
-const faqData = [
-  {
-    question: "What is this product?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
-    question: "How does it work?",
-    answer: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  },
-  {
-    question: "What are the benefits?",
-    answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-  },
-  // Add more FAQ items as needed
-];
