@@ -31,8 +31,9 @@ class PromptManager:
         elif section_name == "features":
             section_data = section_manager.feature_section_generator(token_array)
         elif section_name == "faq":
-            print("generating faqs ... ")
             section_data = section_manager.faq_section_generator(tokens)
+        elif section_name == "testimonials":
+            section_data = section_manager.testimonials_section_generator(tokens)
         return section_data
 
 

@@ -26,10 +26,10 @@ export default function Home() {
           <Hero data={data.hero} ></Hero>
           <Benefits data={data.benefits}></Benefits>
           <Features data={data.features}></Features>
-          <Testimonials></Testimonials>
+          <Testimonials data={data.testimonials}></Testimonials>
           <Pricing data={data.pricing}></Pricing>
           <CallToAction></CallToAction>
-          <FAQ></FAQ>
+          <FAQ data={data.faq}></FAQ>
           <Footer></Footer>
       </div>
   );

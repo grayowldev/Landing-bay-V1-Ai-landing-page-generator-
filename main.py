@@ -32,8 +32,9 @@ def generate_sections():
     file_manager = FileManager()
     section_manager = SectionManager()
 
-    sections = ["hero", "benefits", "pricing", "features"]
-    # , "call-to-action", "faq", "features", "testimonials"
+    sections = ["hero", "benefits", "pricing", "features", "faq", "testimonials"]
+
+    # , "call-to-action", "features", "testimonials"
     model = ModelManager()
     res_json = {}
 
@@ -42,13 +43,15 @@ def generate_sections():
 
     model.generate(init_prompt + user_prompt)
 
-    data = section_manager.get_section_data( sections)
+    data = section_manager.get_section_data(sections)
     # print(data)
 
 
     json_str = file_manager.dict_to_json(data)
     # json_str = file_manager.clean_json(json_str)
-    model.write_res(json_str)
+    print("vvvvvvvvvvvvv")
+    # print(json_str)
+    # model.write_res(json_str)
     file_manager.update_page_content(json_str)
 
 

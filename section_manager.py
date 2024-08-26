@@ -69,7 +69,13 @@ class SectionManager:
         return res
 
     def testimonials_section_generator(self, raw_data):
-        pass
+        from utils.file_manager import FileManager
+        file_manager = FileManager()
+
+        print("printing testimonial raw data")
+        # print(type(raw_data))
+        # print(file_manager.string_to_json(raw_data))
+        return file_manager.string_to_json(raw_data)
 
     def get_section_data(self, sections_array):
         model = ModelManager()
@@ -109,7 +115,9 @@ class SectionManager:
             if section == "benefits":
                 print(">>>>>>>>>")
                 print(tokens)
+            print("Converting tokens to dictionary...")
             data = promptManager.token_to_dict(tokens, section)
+            print("Data: \n", data)
             res[section] = data
 
         return res

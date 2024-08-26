@@ -1,0 +1,101 @@
+{
+    "hero": {
+        "heading": "Build Better Landing Pages Faster",
+        "subheading": "Create stunning landing pages without writing a single line of code."
+    },
+    "benefits": {
+        "title": "The Power of Next.js Landing Pages",
+        "benefits": [
+            "Drag-and-drop interface for easy customization",
+            "Pre-built templates for faster development",
+            "Built-in SEO optimization for better results"
+        ]
+    },
+    "pricing": {
+        "title": "Pricing",
+        "categories": [
+            {
+                "name": "Free",
+                "price": "Free",
+                "features": [
+                    "Basic Landing Page Templates",
+                    "Limited Customization Options",
+                    "Access to Basic Features"
+                ]
+            },
+            {
+                "name": "Pro",
+                "price": "$29/month",
+                "features": [
+                    "Unlimited Landing Page Templates",
+                    "Advanced Customization Options",
+                    "Access to All Features"
+                ]
+            },
+            {
+                "name": "Enterprise",
+                "price": "$99/month",
+                "features": [
+                    "Custom Landing Page Development",
+                    "Dedicated Account Manager",
+                    "Priority Support"
+                ]
+            }
+        ]
+    },
+    "features": {
+        "title": "Powerful Features for Landing Page Success",
+        "features": [
+            "Drag-and-drop editor for easy customization",
+            "Pre-built templates to get started quickly",
+            "Seamless integration with your existing tools",
+            "Advanced analytics to track your results"
+        ]
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "What is this landing page builder?",
+                "answer": "This is a landing page builder specifically designed for Next.js, enabling you to create stunning and performant landing pages with ease."
+            },
+            {
+                "question": "Is it easy to use?",
+                "answer": "Absolutely! The builder is designed with user-friendliness in mind. You'll find it intuitive and simple to navigate."
+            },
+            {
+                "question": "Does it offer customization options?",
+                "answer": "Yes, it provides a wide range of customization options to tailor your landing page to your specific needs and brand."
+            },
+            {
+                "question": "Can I integrate it with other tools?",
+                "answer": "Yes, you can seamlessly integrate the builder with other tools and services to enhance your landing page functionality."
+            }
+        ]
+    },
+    "testimonials": {
+        "title": "What Our Users Say",
+        "testimonials": [
+            {
+                "author": "John Doe",
+                "company": "Acme Corporation",
+                "content": "This landing page builder has been a game-changer for our team. We've seen a significant increase in conversions since switching to it."
+            },
+            {
+                "author": "Jane Smith",
+                "company": "Tech Solutions Inc.",
+                "content": "The ease of use and customization options are incredible. I can create professional-looking landing pages in minutes."
+            },
+            {
+                "author": "Peter Jones",
+                "company": "StartupXYZ",
+                "content": "The pre-built templates saved me so much time. I was able to launch my landing page within hours of getting started."
+            },
+            {
+                "author": "Sarah Lee",
+                "company": "Creative Agency",
+                "content": "I love the integration with Next.js. It's smooth and efficient, allowing me to build landing pages that perfectly align with my existing website."
+            }
+        ]
+    }
+}
