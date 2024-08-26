@@ -36,8 +36,9 @@ class FileManager:
         json_string = json.dumps(data, indent=4)
         return json_string
 
+    # TODO: Refactor this function
     def string_to_json(self,string):
-        string = self.clean_json(string)
+        # string = self.clean_json(string)
         print("String to convert to json", string)
         return json.loads(string)
 

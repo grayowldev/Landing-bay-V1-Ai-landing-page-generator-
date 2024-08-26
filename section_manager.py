@@ -25,7 +25,13 @@ class SectionManager:
         pass
 
     def faq_section_generator(self, raw_data):
-        pass
+        from utils.file_manager import FileManager
+        file_manager = FileManager()
+
+        print("printing faq raw data")
+        # print(type(raw_data))
+        # print(file_manager.string_to_json(raw_data))
+        return file_manager.string_to_json(raw_data)
 
     def feature_section_generator(self, raw_data):
         res = {}
@@ -75,6 +81,8 @@ class SectionManager:
         benefits_path = "prompts/benefits-section.md"
         pricing_path = "prompts/pricing-section.md"
         features_path = "prompts/feature-section.md"
+        testimonial_path = "prompts/testimonial-section.md"
+        faq_path = "prompts/faq-section.md"
 
         for section in sections_array:
             print(section)
@@ -90,6 +98,10 @@ class SectionManager:
             elif section == "features":
                 prompt = promptManager.read(features_path)
                 pass
+            elif section == "testimonials":
+                prompt = promptManager.read(testimonial_path)
+            elif section == "faq":
+                prompt = promptManager.read(faq_path)
             else:
                 return None
 
