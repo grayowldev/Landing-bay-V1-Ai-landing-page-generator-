@@ -39,12 +39,12 @@ class FileManager:
     # TODO: Refactor this function
     def string_to_json(self,string):
         # string = self.clean_json(string)
-        print("String to convert to json", string)
+        # print("String to convert to json", string)
         return json.loads(string)
 
     def update_page_content(self,content):
         path = os.path.abspath(os.path.join("landing-page/src/app/pageContent.json"))
-        print(path)
+        # print(path)
         with open(path, 'w') as file:
             # Write a string to the file
             file.write(content)

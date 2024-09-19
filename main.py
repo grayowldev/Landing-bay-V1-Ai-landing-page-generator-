@@ -46,7 +46,7 @@ def generate_sections():
 
     json_str = file_manager.dict_to_json(data)
     # json_str = file_manager.clean_json(json_str)
-    print("vvvvvvvvvvvvv")
+
     # print(json_str)
     # model.write_res(json_str)
     file_manager.update_page_content(json_str)

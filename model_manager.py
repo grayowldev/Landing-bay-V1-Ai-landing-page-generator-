@@ -47,7 +47,8 @@ class ModelManager:
     self.history.append({"role": "user", "parts": prompt})
 
     response = self.chat_session.send_message(prompt)
-    print(response.text)
+    # print(response.text)
+
     # self.write_res(response.text)
 
     self.history.append({"role": "model", "parts": response.text})

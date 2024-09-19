@@ -79,7 +79,7 @@ class SectionManager:
         faq_path = "prompts/faq-section.md"
 
         for section in sections_array:
-            print(section)
+            # print(section)
             if section == "hero":
                 prompt = promptManager.read(hero_path)
                 pass
@@ -100,7 +100,7 @@ class SectionManager:
                 return None
 
             tokens = model.generate(prompt)
-            print("Converting tokens to dictionary...")
+            # print("Converting tokens to dictionary...")
             data = promptManager.token_to_dict(tokens, section)
             res[section] = data
 

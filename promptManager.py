@@ -5,11 +5,13 @@ from utils.file_manager import FileManager
 class PromptManager:
     def __init__(self):
         self.prompts = []
+        self.dev_mode = False
 
 
     def read(self, file_name):
         content = FileManager.read(self, file_name)
-        print(content)
+        if self.dev_mode:
+            print(content)
         return content
 
     def write(self, file_name, content):
@@ -49,4 +51,5 @@ if __name__ == "__main__":
     sample = promptManager.read("res.md")
     d = promptManager.token_to_dict(sample, "pricing")
     # s = pricing_section_generator(d)
-    print(d)
+
+    # print(d)
