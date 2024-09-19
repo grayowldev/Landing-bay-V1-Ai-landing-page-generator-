@@ -8,15 +8,20 @@ from utils.file_manager import FileManager
 
 def main():
     print("Welcome!!!")
-    generate_sections()
-    # input_listener("flash")
+    input_listener("flash")
 
 def input_listener(model_type=None):
     model = ModelManager()
+    prev_prompt = ""
 
     if model_type is not None:
         # TODO: set explicit types like flash and pro
         model.set_model(model_type)
+
+    print("What kind of landing page would you like to create today?")
+    print("\nexample: Create a landing page for a fitness center")
+    print("\nYou can also always enter exit to exit the program")
+
 
     while True:
         user_input = input("> ")
@@ -24,10 +29,21 @@ def input_listener(model_type=None):
         if user_input.lower() == "exit":
             print("Exiting...")
             sys.exit()
+        elif user_input == "retry":
+            print("Retrying...")
+            generate_sections(prev_prompt)
+        elif user_input != "":
+            print("Valid")
+            user_prompt = user_input
+            prev_prompt = user_prompt
+            generate_sections(user_prompt)
+        else:
+            print("Invalid")
+            user_prompt = " Create a landing page for a saas application"
+            prev_prompt = user_prompt
+            generate_sections(user_prompt)
 
-        model.generate(user_input)
-
-def generate_sections():
+def generate_sections(user_input):
     promptManager = PromptManager()
     file_manager = FileManager()
     section_manager = SectionManager()
@@ -37,7 +53,7 @@ def generate_sections():
 
 
     init_prompt = promptManager.read('prompts/init.md')
-    user_prompt = " Create a landing page for a saas application"
+    user_prompt = user_input
 
     model.generate(init_prompt + user_prompt)
 
