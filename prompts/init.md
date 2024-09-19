@@ -1,1 +1,1 @@
-With the incoming prompt, we are going to be generating data relevant to the prompt, do not generate anything for now just keep this in mind/n ####
+With the incoming prompt, we are going to be generating landing page data relevant to the prompt, do not generate anything for now just keep this in mind/n ####
